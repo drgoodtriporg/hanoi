@@ -17,9 +17,7 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg);
             color: var(--text);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
+            margin: 0; padding: 0; line-height: 1.6;
         }
         header {
             background: var(--primary);
@@ -31,118 +29,61 @@
         .converter-box {
             background: rgba(255,255,255,0.1);
             border: 1px solid rgba(255,255,255,0.2);
-            padding: 15px;
-            border-radius: 8px;
-            margin: 15px auto;
-            max-width: 300px;
+            padding: 15px; border-radius: 8px;
+            margin: 15px auto; max-width: 300px;
         }
         .converter-box input {
-            width: 80%;
-            padding: 8px;
-            border-radius: 4px;
-            border: none;
-            margin-bottom: 10px;
-            text-align: center;
+            width: 80%; padding: 8px; border-radius: 4px;
+            border: none; margin-bottom: 10px; text-align: center;
         }
-        .conv-result {
-            font-weight: bold;
-            font-size: 1.2em;
-            color: #fff;
-        }
-        .hotel-tag {
-            background: rgba(255,255,255,0.15);
-            padding: 6px 18px;
-            border-radius: 4px;
-            font-size: 0.85em;
-            display: inline-block;
-            border: 1px solid rgba(255,255,255,0.3);
-        }
+        .conv-result { font-weight: bold; font-size: 1.2em; color: #fff; }
         .tabs {
-            display: flex;
-            background: #ffffff;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex; background: #ffffff; position: sticky;
+            top: 0; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         .tab-btn {
-            flex: 1;
-            padding: 16px;
-            border: none;
-            background: none;
-            font-weight: 700;
-            color: #90a4ae;
-            cursor: pointer;
-            border-bottom: 3px solid transparent;
+            flex: 1; padding: 16px; border: none; background: none;
+            font-weight: 700; color: #90a4ae; cursor: pointer;
+            border-bottom: 3px solid transparent; transition: all 0.3s;
         }
         .tab-btn.active {
-            color: var(--link-blue);
-            border-bottom: 3px solid var(--link-blue);
+            color: var(--link-blue); border-bottom: 3px solid var(--link-blue);
             background-color: #f8f9fa;
         }
-        .content {
-            padding: 15px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .day-section {
-            display: none;
-        }
-        .day-section.active {
-            display: block;
-            animation: fadeIn 0.4s;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; } to { opacity: 1; }
-        }
+        .content { padding: 15px; max-width: 600px; margin: 0 auto; }
+        .day-section { display: none; }
+        .day-section.active { display: block; animation: fadeIn 0.4s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         .card {
-            background: var(--card-bg);
-            border-radius: 8px;
-            padding: 18px;
-            margin-bottom: 15px;
+            background: var(--card-bg); border-radius: 8px;
+            padding: 18px; margin-bottom: 15px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             border-left: 6px solid #607d8b;
         }
         .time {
-            font-weight: 800;
-            color: var(--link-blue);
-            font-size: 0.85em;
-            display: block;
-            margin-bottom: 4px;
+            font-weight: 800; color: var(--link-blue);
+            font-size: 0.85em; display: block; margin-bottom: 4px;
             text-transform: uppercase;
         }
-        .title {
-            font-size: 1.15em;
-            font-weight: 700;
-            display: block;
-            color: var(--primary);
-        }
-        .chinese {
-            color: #90a4ae;
-            font-size: 0.9em;
-            font-weight: 400;
-        }
+        .title { font-size: 1.15em; font-weight: 700; display: block; color: var(--primary); }
+        .chinese { color: #90a4ae; font-size: 0.9em; font-weight: 400; }
         .map-btn {
-            display: inline-block;
-            margin-top: 12px;
-            padding: 10px 16px;
-            background: var(--link-blue);
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            font-size: 0.85em;
-            font-weight: 600;
+            display: inline-block; margin-top: 12px; padding: 10px 16px;
+            background: var(--link-blue); color: white; text-decoration: none;
+            border-radius: 4px; font-size: 0.85em; font-weight: 600;
         }
+        .tips { background: #cfd8dc; padding: 18px; border-radius: 8px; margin-top: 25px; font-size: 0.9em; color: #455a64; }
     </style>
 </head>
 <body>
 
 <header>
     <h2 style="margin:0; letter-spacing: 1px;">HANOI BRO WEEKEND</h2>
-    <div class="hotel-tag">🏨 Anatole Hotel Hanoi</div>
+    <p style="font-size: 0.9em; opacity: 0.8;">Base: Anatole Hotel Hanoi</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Anatole+Hotel+Hanoi" class="map-btn" style="background:#455a64" target="_blank">📍 Open Hotel Map</a>
     
     <div class="converter-box">
-        <input type="number" id="vndInput" placeholder="Enter VND (e.g. 100000)" oninput="convertCurrency()">
+        <input type="number" id="vndInput" placeholder="Enter VND amount" oninput="convertCurrency()">
         <div class="conv-result" id="hkdResult">0 HKD</div>
         <small style="opacity:0.7">VND ⮕ HKD (Live Data)</small>
     </div>
@@ -158,32 +99,32 @@
     <div id="sat" class="day-section active">
         <div class="card">
             <span class="time">10:30 AM</span>
-            <span class="title">🛬 Arrival</span>
-            <p>Land at Noi Bai. Grab car to Anatole Hotel.</p>
+            <span class="title">🛬 Arrival & Check-in</span>
+            <p>Land at Noi Bai. Grab to Anatole Hotel (45 mins).</p>
         </div>
         <div class="card">
             <span class="time">01:00 PM</span>
             <span class="title">🥣 Bún Chả Số 1 Hàng Mành <span class="chinese">(姮茫1號烤肉米線)</span></span>
-            <p>Michelin Bib Gourmand grilled pork. Legendary spot.</p>
-            <a href="https://www.google.com/maps/search/Bun+Cha+1+Hang+Manh" class="map-btn" target="_blank">🗺️ Open Map</a>
+            <p>Michelin Bib Gourmand grilled pork near the hotel.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Bun+Cha+Dac+Kim+1+Hang+Manh" class="map-btn" target="_blank">🗺️ Open Map</a>
         </div>
         <div class="card">
             <span class="time">02:00 PM</span>
             <span class="title">☕ Non Cafe & More</span>
-            <p>High-quality egg coffee in a chill setting.</p>
-            <a href="https://www.google.com/maps/search/Non+Cafe+%26+More+Hanoi" class="map-btn" target="_blank">🗺️ Open Map</a>
+            <p>Egg coffee session in a chill setting.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Non+Cafe+More+Hanoi" class="map-btn" target="_blank">🗺️ Open Map</a>
         </div>
         <div class="card">
             <span class="time">03:00 PM</span>
             <span class="title">🌅 West Lake (西湖) Chill</span>
-            <p>Sunset drinks lakeside. More relaxed than Old Quarter.</p>
-            <a href="https://www.google.com/maps/search/West+Lake+Hanoi" class="map-btn" target="_blank">🗺️ Open Map</a>
+            <p>Sunset drinks at Serein Cafe or Summit Lounge.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=West+Lake+Hanoi" class="map-btn" target="_blank">🗺️ Open Map</a>
         </div>
         <div class="card">
             <span class="time">07:00 PM</span>
             <span class="title">💆 Hanoi Old Quarter Spa</span>
-            <p>Traditional treatment post-flight.</p>
-            <a href="https://www.google.com/maps/search/Hanoi+Old+Quarter+Spa" class="map-btn" target="_blank">🗺️ Open Map</a>
+            <p>Relax with a traditional treatment.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Hanoi+Old+Quarter+Spa" class="map-btn" target="_blank">🗺️ Open Map</a>
         </div>
     </div>
 
@@ -191,26 +132,32 @@
         <div class="card">
             <span class="time">08:30 AM</span>
             <span class="title">🏛️ Ho Chi Minh's Mausoleum <span class="chinese">(胡志明主席陵)</span></span>
-            <p>Arrive early! Dress code: Covered shoulders and knees.</p>
-            <a href="https://www.google.com/maps/search/Ho+Chi+Minh+Mausoleum" class="map-btn" target="_blank">🗺️ Open Map</a>
+            <p>Arrive early. Dress code: No shorts or tank tops.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Ho+Chi+Minh+Mausoleum" class="map-btn" target="_blank">🗺️ Open Map</a>
         </div>
         <div class="card">
             <span class="time">01:00 PM</span>
             <span class="title">🐟 Chả Cá Anh Vũ <span class="chinese">(英武炙魚)</span></span>
-            <p>Sizzling turmeric fish with dill. Hanoi classic.</p>
-            <a href="https://www.google.com/maps/search/Cha+Ca+Anh+Vu+Hanoi" class="map-btn" target="_blank">🗺️ Open Map</a>
+            <p>Sizzling turmeric fish. A Hanoi essential.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Cha+Ca+Anh+Vu+Giang+Vo" class="map-btn" target="_blank">🗺️ Open Map</a>
         </div>
         <div class="card">
             <span class="time">02:30 PM</span>
-            <span class="title">🚁 Vietnam Military History Museum <span class="chinese">(越南軍事歷史博物館)</span></span>
-            <p>New massive facility. 20-min Grab ride.</p>
-            <a href="https://www.google.com/maps/search/Vietnam+Military+History+Museum+New+Hanoi" class="map-btn" target="_blank">🗺️ Open Map</a>
+            <span class="title">🚁 Military History Museum <span class="chinese">(越南軍事歷史博物館)</span></span>
+            <p>The massive new facility with aircraft/tank collections.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Vietnam+Military+History+Museum+New+Location" class="map-btn" target="_blank">🗺️ Open Map</a>
         </div>
         <div class="card">
             <span class="time">04:30 PM</span>
             <span class="title">🏰 Imperial Citadel <span class="chinese">(昇龍皇城)</span></span>
             <p>UNESCO site featuring war bunkers.</p>
-            <a href="https://www.google.com/maps/search/Imperial+Citadel+of+Thang+Long" class="map-btn" target="_blank">🗺️ Open Map</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Imperial+Citadel+of+Thang+Long" class="map-btn" target="_blank">🗺️ Open Map</a>
+        </div>
+        <div class="card">
+            <span class="time">06:00 PM</span>
+            <span class="title">🍜 Phở Cuốn Hương Mai</span>
+            <p>Try the Special Rice Noodle Soup or Rolled Pho.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Pho+Cuon+Huong+Mai+Hanoi" class="map-btn" target="_blank">🗺️ Open Map</a>
         </div>
     </div>
 
@@ -219,30 +166,37 @@
             <span class="time">09:30 AM</span>
             <span class="title">🍜 Phở Gia Truyền Bát Đàn <span class="chinese">(鉢檀家傳粉)</span></span>
             <p>Hanoi’s most famous beef Pho. Best on Monday.</p>
-            <a href="https://www.google.com/maps/search/Pho+Gia+Truyen+Bat+Dan" class="map-btn" target="_blank">🗺️ Open Map</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Pho+Gia+Truyen+Bat+Dan" class="map-btn" target="_blank">🗺️ Open Map</a>
         </div>
         <div class="card">
             <span class="time">11:00 AM</span>
             <span class="title">📜 Temple of Literature <span class="chinese">(文廟-國子監)</span></span>
             <p>Vietnam's first university. Chill courtyards.</p>
-            <a href="https://www.google.com/maps/search/Temple+of+Literature+Hanoi" class="map-btn" target="_blank">🗺️ Open Map</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Temple+of+Literature+Hanoi" class="map-btn" target="_blank">🗺️ Open Map</a>
         </div>
         <div class="card">
             <span class="time">12:30 PM</span>
             <span class="title">☕ Giang Cafe & Train Street</span>
-            <p>Original Egg Coffee and train tracks.</p>
-            <a href="https://www.google.com/maps/search/Giang+Cafe+Hanoi" class="map-btn" target="_blank">🗺️ Open Map</a>
+            <p>Original Egg Coffee and the nearby train tracks.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Giang+Cafe+Hanoi" class="map-btn" target="_blank">🗺️ Open Map (Giang)</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Hanoi+Train+Street" class="map-btn" target="_blank">🗺️ Open Map (Train)</a>
         </div>
         <div class="card">
             <span class="time">04:30 PM</span>
             <span class="title">🛫 Airport Transfer</span>
-            <p>7:00 PM Flight. Leave hotel 4:30 PM.</p>
+            <p>Leave from Anatole for 7:00 PM flight.</p>
         </div>
+    </div>
+
+    <div class="tips">
+        <strong>💡 TRAVELER NOTES:</strong><br>
+        • Use the <b>Grab App</b> for all rides.<br>
+        • Historical sites (Mausoleum/Museums) are CLOSED on Mondays.<br>
+        • <b>Walking Street:</b> Only active Sat/Sun nights near the hotel.
     </div>
 </div>
 
 <script>
-    // Tab Toggling
     function openDay(evt, dayName) {
         var i, daySection, tablinks;
         daySection = document.getElementsByClassName("day-section");
@@ -259,26 +213,20 @@
         evt.currentTarget.classList.add("active");
     }
 
-    // Live Currency Converter
-    let exchangeRate = 0.00032; // Default fallback
-
+    let exchangeRate = 0.00032; 
     async function getRate() {
         try {
             const response = await fetch('https://open.er-api.com/v6/latest/VND');
             const data = await response.json();
             exchangeRate = data.rates.HKD;
-        } catch (error) {
-            console.log("Using fallback rate");
-        }
+        } catch (error) { console.log("Using fallback"); }
     }
-
     function convertCurrency() {
         const vnd = document.getElementById('vndInput').value;
         const result = (vnd * exchangeRate).toFixed(2);
         document.getElementById('hkdResult').innerText = result + " HKD";
     }
-
-    getRate(); // Fetch live data on load
+    getRate();
 </script>
 
 </body>
