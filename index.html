@@ -30,13 +30,19 @@
             background: rgba(255,255,255,0.1);
             border: 1px solid rgba(255,255,255,0.2);
             padding: 15px; border-radius: 8px;
-            margin: 15px auto; max-width: 300px;
+            margin: 15px auto; max-width: 320px;
         }
         .converter-box input {
-            width: 80%; padding: 8px; border-radius: 4px;
+            width: 60%; padding: 10px; border-radius: 4px;
             border: none; margin-bottom: 10px; text-align: center;
+            font-size: 1em;
         }
-        .conv-result { font-weight: bold; font-size: 1.2em; color: #fff; }
+        .add-k-btn {
+            background: var(--link-blue);
+            color: white; border: none; padding: 10px;
+            border-radius: 4px; cursor: pointer; font-weight: bold;
+        }
+        .conv-result { font-weight: bold; font-size: 1.4em; color: #fff; margin-top: 5px; }
         .tabs {
             display: flex; background: #ffffff; position: sticky;
             top: 0; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -72,7 +78,6 @@
             background: var(--link-blue); color: white; text-decoration: none;
             border-radius: 4px; font-size: 0.85em; font-weight: 600;
         }
-        .tips { background: #cfd8dc; padding: 18px; border-radius: 8px; margin-top: 25px; font-size: 0.9em; color: #455a64; }
     </style>
 </head>
 <body>
@@ -80,12 +85,14 @@
 <header>
     <h2 style="margin:0; letter-spacing: 1px;">HANOI BRO WEEKEND</h2>
     <p style="font-size: 0.9em; opacity: 0.8;">Base: Anatole Hotel Hanoi</p>
-    <a href="https://www.google.com/maps/search/?api=1&query=Anatole+Hotel+Hanoi" class="map-btn" style="background:#455a64" target="_blank">📍 Open Hotel Map</a>
     
     <div class="converter-box">
-        <input type="number" id="vndInput" placeholder="Enter VND amount" oninput="convertCurrency()">
+        <div style="display:flex; justify-content: center; gap: 5px;">
+            <input type="number" id="vndInput" placeholder="Amount" oninput="convertCurrency()">
+            <button class="add-k-btn" onclick="addThousands()">+000</button>
+        </div>
         <div class="conv-result" id="hkdResult">0 HKD</div>
-        <small style="opacity:0.7">VND ⮕ HKD (Live Data)</small>
+        <small style="opacity:0.7">VND ⮕ HKD (Live Exchange)</small>
     </div>
 </header>
 
@@ -100,30 +107,31 @@
         <div class="card">
             <span class="time">10:30 AM</span>
             <span class="title">🛬 Arrival & Check-in</span>
-            <p>Land at Noi Bai. Grab to Anatole Hotel (45 mins).</p>
+            <p>Grab to <b>Anatole Hotel</b> (45 mins).</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Anatole+Hotel+Hanoi" class="map-btn" target="_blank">📍 Hotel Map</a>
         </div>
         <div class="card">
             <span class="time">01:00 PM</span>
             <span class="title">🥣 Bún Chả Số 1 Hàng Mành <span class="chinese">(姮茫1號烤肉米線)</span></span>
-            <p>Michelin Bib Gourmand grilled pork near the hotel.</p>
+            <p>Michelin Bib Gourmand grilled pork. 10-min walk from hotel.</p>
             <a href="https://www.google.com/maps/search/?api=1&query=Bun+Cha+Dac+Kim+1+Hang+Manh" class="map-btn" target="_blank">🗺️ Open Map</a>
         </div>
         <div class="card">
             <span class="time">02:00 PM</span>
             <span class="title">☕ Non Cafe & More</span>
-            <p>Egg coffee session in a chill setting.</p>
-            <a href="https://www.google.com/maps/search/?api=1&query=Non+Cafe+More+Hanoi" class="map-btn" target="_blank">🗺️ Open Map</a>
+            <p>Egg coffee session in a chill hidden setting.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Non+cafe+and+More+Hanoi" class="map-btn" target="_blank">🗺️ Open Map</a>
         </div>
         <div class="card">
             <span class="time">03:00 PM</span>
             <span class="title">🌅 West Lake (西湖) Chill</span>
-            <p>Sunset drinks at Serein Cafe or Summit Lounge.</p>
+            <p>Sunset drinks at <b>Serein Cafe</b> or <b>Summit Lounge</b>. Chill vibes.</p>
             <a href="https://www.google.com/maps/search/?api=1&query=West+Lake+Hanoi" class="map-btn" target="_blank">🗺️ Open Map</a>
         </div>
         <div class="card">
             <span class="time">07:00 PM</span>
             <span class="title">💆 Hanoi Old Quarter Spa</span>
-            <p>Relax with a traditional treatment.</p>
+            <p>Relax with a traditional treatment after the flight.</p>
             <a href="https://www.google.com/maps/search/?api=1&query=Hanoi+Old+Quarter+Spa" class="map-btn" target="_blank">🗺️ Open Map</a>
         </div>
     </div>
@@ -132,32 +140,32 @@
         <div class="card">
             <span class="time">08:30 AM</span>
             <span class="title">🏛️ Ho Chi Minh's Mausoleum <span class="chinese">(胡志明主席陵)</span></span>
-            <p>Arrive early. Dress code: No shorts or tank tops.</p>
+            <p>Arrive early (closes noon). <b>No shorts or tank tops.</b></p>
             <a href="https://www.google.com/maps/search/?api=1&query=Ho+Chi+Minh+Mausoleum" class="map-btn" target="_blank">🗺️ Open Map</a>
         </div>
         <div class="card">
             <span class="time">01:00 PM</span>
             <span class="title">🐟 Chả Cá Anh Vũ <span class="chinese">(英武炙魚)</span></span>
-            <p>Sizzling turmeric fish. A Hanoi essential.</p>
+            <p>Sizzling turmeric fish. The quintessential Hanoi lunch.</p>
             <a href="https://www.google.com/maps/search/?api=1&query=Cha+Ca+Anh+Vu+Giang+Vo" class="map-btn" target="_blank">🗺️ Open Map</a>
         </div>
         <div class="card">
             <span class="time">02:30 PM</span>
             <span class="title">🚁 Military History Museum <span class="chinese">(越南軍事歷史博物館)</span></span>
-            <p>The massive new facility with aircraft/tank collections.</p>
-            <a href="https://www.google.com/maps/search/?api=1&query=Vietnam+Military+History+Museum+New+Location" class="map-btn" target="_blank">🗺️ Open Map</a>
+            <p>New massive facility. Check out the B-52 wreckage and tanks.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Vietnam+Military+History+Museum+New" class="map-btn" target="_blank">🗺️ Open Map</a>
         </div>
         <div class="card">
             <span class="time">04:30 PM</span>
             <span class="title">🏰 Imperial Citadel <span class="chinese">(昇龍皇城)</span></span>
-            <p>UNESCO site featuring war bunkers.</p>
+            <p>UNESCO site featuring ancient gates and command bunkers.</p>
             <a href="https://www.google.com/maps/search/?api=1&query=Imperial+Citadel+of+Thang+Long" class="map-btn" target="_blank">🗺️ Open Map</a>
         </div>
         <div class="card">
             <span class="time">06:00 PM</span>
             <span class="title">🍜 Phở Cuốn Hương Mai</span>
-            <p>Try the Special Rice Noodle Soup or Rolled Pho.</p>
-            <a href="https://www.google.com/maps/search/?api=1&query=Pho+Cuon+Huong+Mai+Hanoi" class="map-btn" target="_blank">🗺️ Open Map</a>
+            <p>Dinner: Try the Special Rice Noodle Soup or Rolled Pho.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Pho+Cuon+Huong+Mai" class="map-btn" target="_blank">🗺️ Open Map</a>
         </div>
     </div>
 
@@ -165,34 +173,34 @@
         <div class="card">
             <span class="time">09:30 AM</span>
             <span class="title">🍜 Phở Gia Truyền Bát Đàn <span class="chinese">(鉢檀家傳粉)</span></span>
-            <p>Hanoi’s most famous beef Pho. Best on Monday.</p>
+            <p>Hanoi’s most famous beef Pho. Best on Monday mornings.</p>
             <a href="https://www.google.com/maps/search/?api=1&query=Pho+Gia+Truyen+Bat+Dan" class="map-btn" target="_blank">🗺️ Open Map</a>
         </div>
         <div class="card">
             <span class="time">11:00 AM</span>
             <span class="title">📜 Temple of Literature <span class="chinese">(文廟-國子監)</span></span>
-            <p>Vietnam's first university. Chill courtyards.</p>
+            <p>Vietnam's first university. Wander the chill courtyards.</p>
             <a href="https://www.google.com/maps/search/?api=1&query=Temple+of+Literature+Hanoi" class="map-btn" target="_blank">🗺️ Open Map</a>
         </div>
         <div class="card">
             <span class="time">12:30 PM</span>
             <span class="title">☕ Giang Cafe & Train Street</span>
-            <p>Original Egg Coffee and the nearby train tracks.</p>
+            <p>Original Egg Coffee followed by a walk to the train tracks.</p>
             <a href="https://www.google.com/maps/search/?api=1&query=Giang+Cafe+Hanoi" class="map-btn" target="_blank">🗺️ Open Map (Giang)</a>
             <a href="https://www.google.com/maps/search/?api=1&query=Hanoi+Train+Street" class="map-btn" target="_blank">🗺️ Open Map (Train)</a>
         </div>
         <div class="card">
             <span class="time">04:30 PM</span>
             <span class="title">🛫 Airport Transfer</span>
-            <p>Leave from Anatole for 7:00 PM flight.</p>
+            <p>Leave Anatole for your 7:00 PM flight back home.</p>
         </div>
     </div>
 
     <div class="tips">
         <strong>💡 TRAVELER NOTES:</strong><br>
-        • Use the <b>Grab App</b> for all rides.<br>
-        • Historical sites (Mausoleum/Museums) are CLOSED on Mondays.<br>
-        • <b>Walking Street:</b> Only active Sat/Sun nights near the hotel.
+        • Use the <b>Grab App</b> for all travel.<br>
+        • Mausoleum and Military Museum are <b>CLOSED on Mondays</b>.<br>
+        • <b>Japan Street:</b> Good for souvenirs/late night snacks near West Lake.
     </div>
 </div>
 
@@ -221,6 +229,15 @@
             exchangeRate = data.rates.HKD;
         } catch (error) { console.log("Using fallback"); }
     }
+
+    function addThousands() {
+        const input = document.getElementById('vndInput');
+        if (input.value) {
+            input.value = input.value + "000";
+            convertCurrency();
+        }
+    }
+
     function convertCurrency() {
         const vnd = document.getElementById('vndInput').value;
         const result = (vnd * exchangeRate).toFixed(2);
