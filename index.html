@@ -15,78 +15,41 @@
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            margin: 0; padding: 0; line-height: 1.6;
+            background-color: var(--bg); color: var(--text); margin: 0; padding: 0; line-height: 1.6;
         }
         header {
-            background: var(--primary);
-            color: white;
-            padding: 25px 20px;
-            text-align: center;
+            background: var(--primary); color: white; padding: 25px 20px; text-align: center;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         .converter-box {
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.2);
-            padding: 15px; border-radius: 8px;
-            margin: 15px auto; max-width: 320px;
+            background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+            padding: 15px; border-radius: 8px; margin: 15px auto; max-width: 320px;
         }
         .converter-box input {
-            width: 60%; padding: 10px; border-radius: 4px;
-            border: none; margin-bottom: 10px; text-align: center;
-            font-size: 1em;
+            width: 60%; padding: 10px; border-radius: 4px; border: none; margin-bottom: 10px; text-align: center;
         }
-        .add-k-btn {
-            background: var(--link-blue);
-            color: white; border: none; padding: 10px;
-            border-radius: 4px; cursor: pointer; font-weight: bold;
-        }
+        .add-k-btn { background: var(--link-blue); color: white; border: none; padding: 10px; border-radius: 4px; font-weight: bold; }
         .conv-result { font-weight: bold; font-size: 1.4em; color: #fff; margin-top: 5px; }
-        .tabs {
-            display: flex; background: #ffffff; position: sticky;
-            top: 0; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .tab-btn {
-            flex: 1; padding: 16px; border: none; background: none;
-            font-weight: 700; color: #90a4ae; cursor: pointer;
-            border-bottom: 3px solid transparent; transition: all 0.3s;
-        }
-        .tab-btn.active {
-            color: var(--link-blue); border-bottom: 3px solid var(--link-blue);
-            background-color: #f8f9fa;
-        }
+        .tabs { display: flex; background: #ffffff; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .tab-btn { flex: 1; padding: 16px; border: none; background: none; font-weight: 700; color: #90a4ae; border-bottom: 3px solid transparent; }
+        .tab-btn.active { color: var(--link-blue); border-bottom: 3px solid var(--link-blue); background-color: #f8f9fa; }
         .content { padding: 15px; max-width: 600px; margin: 0 auto; }
         .day-section { display: none; }
         .day-section.active { display: block; animation: fadeIn 0.4s; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        .card {
-            background: var(--card-bg); border-radius: 8px;
-            padding: 18px; margin-bottom: 15px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border-left: 6px solid #607d8b;
-        }
-        .time {
-            font-weight: 800; color: var(--link-blue);
-            font-size: 0.85em; display: block; margin-bottom: 4px;
-            text-transform: uppercase;
-        }
+        .card { background: var(--card-bg); border-radius: 8px; padding: 18px; margin-bottom: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-left: 6px solid #607d8b; }
+        .time { font-weight: 800; color: var(--link-blue); font-size: 0.85em; display: block; margin-bottom: 4px; text-transform: uppercase; }
         .title { font-size: 1.15em; font-weight: 700; display: block; color: var(--primary); }
-        .chinese { color: #90a4ae; font-size: 0.9em; font-weight: 400; }
-        .map-btn {
-            display: inline-block; margin-top: 12px; padding: 10px 16px;
-            background: var(--link-blue); color: white; text-decoration: none;
-            border-radius: 4px; font-size: 0.85em; font-weight: 600;
-        }
-        .tips { background: #cfd8dc; padding: 18px; border-radius: 8px; margin-top: 25px; font-size: 0.9em; color: #455a64; }
+        .chinese { color: #90a4ae; font-size: 0.9em; }
+        .map-btn { display: inline-block; margin-top: 12px; padding: 10px 16px; background: var(--link-blue); color: white; text-decoration: none; border-radius: 4px; font-size: 0.85em; font-weight: 600; }
     </style>
 </head>
 <body>
 
 <header>
-    <h2 style="margin:0; letter-spacing: 1px;">HANOI 3-DAY LONG WEEKEND</h2>
-    <p style="font-size: 0.9em; opacity: 0.9; margin: 10px 0;">🏨 <b>Anatole Hotel Hanoi</b><br>27 Nha Chung, Hoan Kiem, Hanoi</p>
-    <a href="https://maps.app.goo.gl/93" class="map-btn" style="background:#455a64" target="_blank">📍 Hotel Map</a>
+    <h2 style="margin:0;">HANOI 3-DAY WEEKEND</h2>
+    <p style="font-size: 0.9em; margin: 10px 0;">🏨 <b>Anatole Hotel Hanoi</b><br>27 Nhà Chung, Hàng Trống</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Anatole+Hotel+Hanoi" class="map-btn" style="background:#455a64" target="_blank">📍 Hotel Map</a>
     
     <div class="converter-box">
         <div style="display:flex; justify-content: center; gap: 5px;">
@@ -94,57 +57,46 @@
             <button class="add-k-btn" onclick="addThousands()">+000</button>
         </div>
         <div class="conv-result" id="hkdResult">0 HKD</div>
-        <small style="opacity:0.7">VND ⮕ HKD (Live Exchange)</small>
     </div>
 </header>
 
 <div class="tabs">
-    <button class="tab-btn active" onclick="openDay(event, 'sat')">SATURDAY</button>
-    <button class="tab-btn" onclick="openDay(event, 'sun')">SUNDAY</button>
-    <button class="tab-btn" onclick="openDay(event, 'mon')">MONDAY</button>
+    <button class="tab-btn active" onclick="openDay(event, 'sat')">SAT</button>
+    <button class="tab-btn" onclick="openDay(event, 'sun')">SUN</button>
+    <button class="tab-btn" onclick="openDay(event, 'mon')">MON</button>
 </div>
 
 <div class="content">
     <div id="sat" class="day-section active">
         <div class="card">
-            <span class="time">10:30 AM</span>
-            <span class="title">🛬 Arrival & Check-in</span>
-            <p>Grab from airport to <b>Anatole Hotel</b>. Drop bags and head to lunch.</p>
-        </div>
-        <div class="card">
             <span class="time">01:00 PM</span>
             <span class="title">🥣 Bún Chả Số 1 Hàng Mành <span class="chinese">(姮茫1號烤肉米線)</span></span>
-            <p>Michelin Bib Gourmand grilled pork. Hanoi essential lunch.</p>
-            <a href="https://maps.app.goo.gl/84" class="map-btn" target="_blank">🗺️ Open Map</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Bun+Cha+Dac+Kim+1+Hang+Manh" class="map-btn" target="_blank">🗺️ Open Map</a>
         </div>
         <div class="card">
             <span class="time">02:00 PM</span>
-            <span class="title">☕ Coffee: Non cafe & More</span>
-            <p>Great spot for your first egg coffee experience.</p>
-            <a href="https://www.google.com/maps/search/Loading+T+Cafe+Hanoi" class="map-btn" target="_blank">🗺️ Open Map</a>
+            <span class="title">☕ Non Cafe & More</span>
+            <a href="https://www.google.com/maps/search/?api=1&query=Non+Cafe+More+Hanoi" class="map-btn" target="_blank">🗺️ Open Map</a>
         </div>
         <div class="card">
             <span class="time">03:00 PM</span>
             <span class="title">🏰 Imperial Citadel <span class="chinese">(昇龍皇城)</span></span>
-            <p>UNESCO site featuring ancient gates and command bunkers.</p>
-            <a href="https://maps.app.goo.gl/95" class="map-btn" target="_blank">🗺️ Open Map</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Imperial+Citadel+of+Thang+Long" class="map-btn" target="_blank">🗺️ Open Map</a>
         </div>
         <div class="card">
             <span class="time">04:30 PM</span>
             <span class="title">🎨 Phúc Lợi Stamp Shop <span class="chinese">(福利刻章)</span></span>
-            <p><b>Custom Souvenir:</b> Wood-carved stamps. Use your own photo (with gf/wife) for a unique design.</p>
-            <a href="https://maps.app.goo.gl/140" class="map-btn" target="_blank">🗺️ Open Map</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Phuc+Loi+Stamps+6+Dao+Duy+Tu" class="map-btn" target="_blank">🗺️ Open Map</a>
         </div>
         <div class="card">
             <span class="time">07:00 PM</span>
             <span class="title">💆 Hanoi Old Quarter Spa</span>
-            <p>Unwind with a traditional treatment after exploring.</p>
-            <a href="https://maps.app.goo.gl/115" class="map-btn" target="_blank">🗺️ Open Map</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Hanoi+Old+Quarter+Spa" class="map-btn" target="_blank">🗺️ Open Map</a>
         </div>
         <div class="card">
             <span class="time">Evening</span>
             <span class="title">🍺 Lake Walking Street <span class="chinese">(還劍湖)</span></span>
-            <p>Car-free walking zone right by your hotel. Sunset at West Lake followed by fresh beer here.</p>
+            <p>Directly outside your hotel.</p>
         </div>
     </div>
 
@@ -152,32 +104,27 @@
         <div class="card">
             <span class="time">08:30 AM</span>
             <span class="title">🏛️ Ho Chi Minh's Mausoleum <span class="chinese">(胡志明主席陵)</span></span>
-            <p>Arrive early. Dress code: Covered shoulders and knees.</p>
-            <a href="https://maps.app.goo.gl/96" class="map-btn" target="_blank">🗺️ Open Map</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Ho+Chi+Minh+Mausoleum" class="map-btn" target="_blank">🗺️ Open Map</a>
         </div>
         <div class="card">
             <span class="time">11:00 AM</span>
             <span class="title">🚀 Military History Museum <span class="chinese">(越南軍事歷史博物館)</span></span>
-            <p>Aircraft and tank collections. (New Location).</p>
-            <a href="https://maps.app.goo.gl/94" class="map-btn" target="_blank">🗺️ Open Map</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Vietnam+Military+History+Museum+New+Location" class="map-btn" target="_blank">🗺️ Open Map</a>
         </div>
         <div class="card">
             <span class="time">01:00 PM</span>
             <span class="title">🐟 Chả Cá Anh Vũ <span class="chinese">(英武炙魚)</span></span>
-            <p>Sizzling turmeric fish. A Hanoi legendary dish.</p>
-            <a href="https://maps.app.goo.gl/89" class="map-btn" target="_blank">🗺️ Open Map</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Cha+Ca+Anh+Vu+Giang+Vo" class="map-btn" target="_blank">🗺️ Open Map</a>
         </div>
         <div class="card">
             <span class="time">06:00 PM</span>
-            <span class="title">🍜 Dinner: Phở Cuốn Hương Mai</span>
-            <p>Try the Special Rice Noodle Soup or Rolled Pho.</p>
-            <a href="https://maps.app.goo.gl/130" class="map-btn" target="_blank">🗺️ Open Map</a>
+            <span class="title">🍜 Phở Cuốn Hương Mai</span>
+            <a href="https://www.google.com/maps/search/?api=1&query=Pho+Cuon+Huong+Mai+Hanoi" class="map-btn" target="_blank">🗺️ Open Map</a>
         </div>
         <div class="card">
             <span class="time">07:00 PM</span>
             <span class="title">🇯🇵 Japan Street (Kim Ma)</span>
-            <p>Souvenirs and late night snacks near West Lake.</p>
-            <a href="https://maps.app.goo.gl/141" class="map-btn" target="_blank">🗺️ Open Map</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Japan+Street+Hanoi+Kim+Ma" class="map-btn" target="_blank">🗺️ Open Map</a>
         </div>
     </div>
 
@@ -185,77 +132,34 @@
         <div class="card">
             <span class="time">09:30 AM</span>
             <span class="title">🍜 Phở Gia Truyền Bát Đàn <span class="chinese">(鉢檀家傳粉)</span></span>
-            <p>Hanoi’s most famous traditional beef Pho.</p>
-            <a href="https://maps.app.goo.gl/98" class="map-btn" target="_blank">🗺️ Open Map</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Pho+Gia+Truyen+Bat+Dan" class="map-btn" target="_blank">🗺️ Open Map</a>
         </div>
         <div class="card">
             <span class="time">11:00 AM</span>
             <span class="title">📜 Temple of Literature <span class="chinese">(文廟-國子監)</span></span>
-            <p>Vietnam's first university. Peaceful chill courtyards.</p>
-            <a href="https://maps.app.goo.gl/97" class="map-btn" target="_blank">🗺️ Open Map</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Temple+of+Literature+Hanoi" class="map-btn" target="_blank">🗺️ Open Map</a>
         </div>
         <div class="card">
             <span class="time">12:30 PM</span>
             <span class="title">☕ Giang Cafe & Train Street</span>
-            <p>Original Egg Coffee followed by the train tracks walk.</p>
-            <a href="https://maps.app.goo.gl/91" class="map-btn" target="_blank">🗺️ Open Map</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Giang+Cafe+Hanoi" class="map-btn" target="_blank">🗺️ Open Map</a>
         </div>
-        <div class="card">
-            <span class="time">04:30 PM</span>
-            <span class="title">🛫 Airport Transfer</span>
-            <p>Leave Anatole for your 7:00 PM flight home.</p>
-        </div>
-    </div>
-
-    <div class="tips">
-        <strong>💡 PRO TIPS:</strong><br>
-        • <b>Stamps:</b> Show the carver at Phúc Lợi the photo on your phone.<br>
-        • <b>Grab:</b> Always use the app for fair pricing.<br>
-        • <b>Monday:</b> Museums are closed; enjoy the food and coffee scene.
     </div>
 </div>
 
 <script>
     function openDay(evt, dayName) {
-        var i, daySection, tablinks;
-        daySection = document.getElementsByClassName("day-section");
-        for (i = 0; i < daySection.length; i++) {
-            daySection[i].style.display = "none";
-            daySection[i].classList.remove("active");
-        }
-        tablinks = document.getElementsByClassName("tab-btn");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].classList.remove("active");
-        }
+        var i, ds = document.getElementsByClassName("day-section"), tb = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < ds.length; i++) { ds[i].style.display = "none"; }
+        for (i = 0; i < tb.length; i++) { tb[i].classList.remove("active"); }
         document.getElementById(dayName).style.display = "block";
-        document.getElementById(dayName).classList.add("active");
         evt.currentTarget.classList.add("active");
     }
-
-    let exchangeRate = 0.00032; 
-    async function getRate() {
-        try {
-            const response = await fetch('https://open.er-api.com/v6/latest/VND');
-            const data = await response.json();
-            exchangeRate = data.rates.HKD;
-        } catch (error) { console.log("Using fallback"); }
-    }
-
-    function addThousands() {
-        const input = document.getElementById('vndInput');
-        if (input.value) {
-            input.value = input.value + "000";
-            convertCurrency();
-        }
-    }
-
-    function convertCurrency() {
-        const vnd = document.getElementById('vndInput').value;
-        const result = (vnd * exchangeRate).toFixed(2);
-        document.getElementById('hkdResult').innerText = result + " HKD";
-    }
+    let rate = 0.00032;
+    async function getRate() { try { const r = await fetch('https://open.er-api.com/v6/latest/VND'); const d = await r.json(); rate = d.rates.HKD; } catch(e){} }
+    function addThousands() { const i = document.getElementById('vndInput'); if(i.value){ i.value = i.value + "000"; convertCurrency(); } }
+    function convertCurrency() { const v = document.getElementById('vndInput').value; document.getElementById('hkdResult').innerText = (v * rate).toFixed(2) + " HKD"; }
     getRate();
 </script>
-
 </body>
 </html>
